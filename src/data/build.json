@@ -1,11 +1,13 @@
 [{
   "name": "Warning sign",
   "description": "Build a warning sign outside the house, so trespassers believe it isn't worth to enter.",
+  "icon": "",
   "fame": 1,
   "innerPeace": 2
 }, {
   "name": "Mines",
   "description": "Build some mines around the building to keep outsiders outside.",
+  "icon": "",
   "fame": 2,
   "innerPeace": 5
 }]

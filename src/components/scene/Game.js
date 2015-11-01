@@ -18,6 +18,7 @@ class Bar extends Component {
       day: 1,
       health: 100,
       blood: 100,
+      gold: 150,
       fame: 10,
       innerPeace: 50,
     };
@@ -27,6 +28,7 @@ class Bar extends Component {
     World.on('day', value => this.setState({day: value}));
     World.on('health', value => this.setState({health: value}));
     World.on('blood', value => this.setState({blood: value}));
+    World.on('gold', value => this.setState({gold: value}));
     World.on('fame', value => this.setState({fame: value}));
     World.on('innerPeace', value => this.setState({innerPeace: value}));
   }
@@ -39,10 +41,12 @@ class Bar extends Component {
         <Bubble row={1}>Day: {this.state.day}</Bubble>
         <Bubble row={2}>Health: {this.state.health}</Bubble>
         <Bubble row={3}>Blood: {this.state.blood}</Bubble>
-        <Bubble row={4}>Fame: {this.state.fame}</Bubble>
+        <Bubble row={4}>Gold: {this.state.gold}</Bubble>
+        <Bubble row={5}>Fame: {this.state.fame}</Bubble>
         <ProgressBar progress={this.state.innerPeace} />
         <Button className="button-build">Build</Button>
         <Button className="button-quests">Quests</Button>
+        <Button className="button-upgrades">Upgrades</Button>
         <Button className="button-next">Next day</Button>
         <BuildMenu />
       </Scene>

@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 class BuildMenu extends Component {
   render() {
-    return <Menu items={Build} />;
+    return <Menu title="Build" items={Build} />;
   }
 }
 

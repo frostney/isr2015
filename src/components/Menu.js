@@ -7,9 +7,13 @@ class Menu extends Component {
     const items = this.props.items.map(item => <MenuItem {...item} />);
 
     return (
-      <div className="menu">
-        <div className="menu-inner">{items}</div>
-        <div className="menu-bottom"><Button>Close</Button></div>
+      <div>
+        <div className="menu-overlay" />
+        <div className="menu">
+          <h2>{this.props.title}</h2>
+          <div className="menu-inner">{items}</div>
+          <div className="menu-bottom"><Button onClick={this.props.onClose}>Close</Button></div>
+        </div>
       </div>
     );
   }

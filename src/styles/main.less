@@ -25,6 +25,10 @@ h1, h2, h3, h4, .button {
   font-family: 'Shadows Into Light', cursive;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
 /* main */
 
 #content {
@@ -63,6 +67,16 @@ h1, h2, h3, h4, .button {
   opacity: 0.3;
 }
 
+.menu-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .menu {
   @width: 480px;
   @height: 360px;
@@ -83,8 +97,39 @@ h1, h2, h3, h4, .button {
   left: 50%;
 }
 
+.menu-inner {
+  height: 240px;
+  overflow-y: auto;
+}
+
+.menu-item-icon {
+  width: 6.0rem;
+  height: 6.0rem;
+}
+
+.menu-item {
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 400ms;
+  border-radius: @padding-default;
+  margin-bottom: @padding-default;
+
+  &:hover {
+    border: 1px solid @color-olive-light;
+  }
+}
+
+.menu-item-text {
+  width: 75%;
+  margin-left: @padding-default;
+}
+
+.menu-item-icon, .menu-item-text {
+  display: inline-block;
+}
+
 .bubble {
-  @width: 11.25rem;
+  @width: 8.75rem;
 
   width: @width;
   position: absolute;
@@ -116,6 +161,11 @@ h1, h2, h3, h4, .button {
 
   &.bubble-row-4 {
     left: @padding-default + (@width + @padding-default) * 3;
+    top: @padding-default;
+  }
+
+  &.bubble-row-5 {
+    left: @padding-default + (@width + @padding-default) * 4;
     top: @padding-default;
   }
 }
@@ -152,7 +202,12 @@ h1, h2, h3, h4, .button {
 
   &.button-quests {
     bottom: 1.0rem;
-    left: 8.0rem;
+    left: 7.0rem;
+  }
+
+  &.button-upgrades {
+    bottom: 1.0rem;
+    left: 14.25rem;
   }
 }
 
