@@ -33,12 +33,11 @@ class Bar extends Component {
   render() {
     return (
       <Scene name="game">
-        <Bubble>Day: {this.state.day}</Bubble>
-        <Bubble>Health: {this.state.health}</Bubble>
-        <Bubble>Blood: {this.state.blood}</Bubble>
-        <Bubble>Fame: {this.state.fame}</Bubble>
+        <Bubble row={1}>Day: {this.state.day}</Bubble>
+        <Bubble row={2}>Health: {this.state.health}</Bubble>
+        <Bubble row={3}>Blood: {this.state.blood}</Bubble>
+        <Bubble row={4}>Fame: {this.state.fame}</Bubble>
         <ProgressBar progress={this.state.innerPeace} />
-        <div>Inner Peace: {this.state.innerPeace} / 100</div>
         <Button className="button-build">Build</Button>
         <Button className="button-quests">Quests</Button>
         <Button className="button-next">Next day</Button>

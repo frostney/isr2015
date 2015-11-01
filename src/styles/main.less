@@ -33,7 +33,7 @@ h1, h2, h3, h4, .button {
 }
 
 .viewport {
-  background-image: linear-gradient(to bottom, @color-light, @color-main);
+  background-image: linear-gradient(to bottom, @color-blue-light, @color-blue);
   color: #fff;
   box-shadow: 0px 0px 0.5rem #444;
 }
@@ -47,7 +47,7 @@ h1, h2, h3, h4, .button {
   }
 
   &.game {
-    background-image: linear-gradient(to bottom, darken(@color-light, 5%), @color-dark);
+    background-image: linear-gradient(to bottom, darken(@color-blue-light, 5%), @color-blue-dark);
   }
 }
 
@@ -56,9 +56,40 @@ h1, h2, h3, h4, .button {
 }
 
 .bubble {
-  width: 20%;
-  height: 2.0rem;
+  @width: 11.25rem;
+
+  width: @width;
   position: absolute;
+  font-size: 1.1rem;
+
+  background-color: @color-blue-darker;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+
+  text-shadow: 0px 0px 12px #222;
+  box-shadow: 0px 0px 8px #222;
+
+  &.bubble-row-1 {
+    left: @padding-default;
+    top: @padding-default;
+  }
+
+  &.bubble-row-2 {
+    left: @padding-default + @width + @padding-default;
+    top: @padding-default;
+  }
+
+  &.bubble-row-3 {
+    left: @padding-default + (@width + @padding-default) * 2;
+    top: @padding-default;
+  }
+
+  &.bubble-row-4 {
+    left: @padding-default + (@width + @padding-default) * 3;
+    top: @padding-default;
+  }
 }
 
 .button {
@@ -67,16 +98,18 @@ h1, h2, h3, h4, .button {
   cursor: pointer;
   font-weight: bold;
 
-  background-color: @color-dark;
-  border: 1px solid @color-darker;
+  background-color: @color-olive-dark;
+  border: 1px solid @color-olive-darker;
   padding: 0.75rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-radius: 0.5rem;
   transition: all 400ms;
+  text-shadow: 0px 0px 12px #222;
+  box-shadow: 0px 0px 8px #222;
 
   &:hover {
-    background-color: lighten(@color-dark, 10%);
+    background-color: lighten(@color-olive-dark, 10%);
   }
 
   &.button-next {
@@ -99,17 +132,18 @@ h1, h2, h3, h4, .button {
   position: absolute;
   height: 1.0rem;
   width: 40rem;
-  top: 6rem;
+  top: 4.5rem;
   margin-left: 5rem;
 
-  background-color: @color-dark;
-  border: 1px solid @color-darker;
+  background-color: @color-blue-dark;
+  border: 1px solid @color-blue-darker;
   border-radius: 0.75rem;
+  box-shadow: 0px 0px 8px #222;
 
   overflow: hidden;
 
   .progress-bar-active {
-    background-color: lighten(@color-lighter, 30%);
+    background-color: lighten(@color-blue-lighter, 30%);
     height: 100%;
   }
 }
