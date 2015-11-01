@@ -15,7 +15,7 @@ class Intro extends Component {
       <Scene name="intro">
         <h2>Well... you are a vampire.</h2>
         <h3>What would you like to be called?</h3>
-        <input placeholder="Derpula" />
+        <input className="input-name" placeholder="Derpula" />
         <Button onClick={this.switchToGame}>Continue</Button>
       </Scene>
     );

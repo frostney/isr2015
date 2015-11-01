@@ -9,6 +9,8 @@ import Button from '../Button';
 import Bubble from '../Bubble';
 import ProgressBar from '../ProgressBar';
 import BuildMenu from '../BuildMenu';
+import QuestsMenu from '../QuestsMenu';
+import UpgradesMenu from '../UpgradesMenu';
 
 class Bar extends Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class Bar extends Component {
       gold: 150,
       fame: 10,
       innerPeace: 50,
+      menu: 'none',
     };
   }
 
@@ -33,22 +36,41 @@ class Bar extends Component {
     World.on('innerPeace', value => this.setState({innerPeace: value}));
   }
 
+  onCloseMenu = () => {
+    this.setState({menu: 'none'});
+  }
+
+  onBuild = () => this.setState({menu: 'build'});
+  onQuests = () => this.setState({menu: 'quests'});
+  onUpgrades = () => this.setState({menu: 'upgrades'});
+  onNextDay = () => console.log('näxt');
+
   render() {
+    const menu = (() => {
+      switch (this.state.menu) {
+        case 'none': return null;
+        case 'build': return <BuildMenu onClose={this.onCloseMenu} />;
+        case 'quests': return <QuestsMenu onClose={this.onCloseMenu} />;
+        case 'upgrades': return <UpgradesMenu onClose={this.onCloseMenu} />;
+        default:
+          return null;
+      }
+    })();
+
+    const bubbles = ['day', 'health', 'blood', 'gold', 'fame'].map((value, index) => {
+      return <Bubble key={index} icon={value} row={index + 1}>{this.state[value]}</Bubble>;
+    });
+
     return (
       <Scene name="game">
-
         <div className="night-overlay" />
-        <Bubble row={1}>Day: {this.state.day}</Bubble>
-        <Bubble row={2}>Health: {this.state.health}</Bubble>
-        <Bubble row={3}>Blood: {this.state.blood}</Bubble>
-        <Bubble row={4}>Gold: {this.state.gold}</Bubble>
-        <Bubble row={5}>Fame: {this.state.fame}</Bubble>
+        {bubbles}
         <ProgressBar progress={this.state.innerPeace} />
-        <Button className="button-build">Build</Button>
-        <Button className="button-quests">Quests</Button>
-        <Button className="button-upgrades">Upgrades</Button>
-        <Button className="button-next">Next day</Button>
-        <BuildMenu />
+        <Button className="button-build" onClick={this.onBuild}>Build</Button>
+        <Button className="button-quests" onClick={this.onQuests}>Quests</Button>
+        <Button className="button-upgrades" onClick={this.onUpgrades}>Upgrades</Button>
+        <Button className="button-next" onClick={this.onNextDay}>Next day</Button>
+        {menu}
       </Scene>
     );
   }

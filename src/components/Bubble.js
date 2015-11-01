@@ -8,7 +8,7 @@ class Bubble extends Component {
   render() {
     return (
       <div className={`bubble bubble-row-${this.props.row}`}>
-        <div className={`icon icon-${this.props.iconName}`} />
+        <div className={`icon icon-${this.props.icon}`} />
         <div className="text">{this.props.children}</div>
       </div>
     );

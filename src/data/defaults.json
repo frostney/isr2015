@@ -1,0 +1,11 @@
+{
+  "day": 1,
+  "health": 100,
+  "blood": 100,
+  "gold": 150,
+  "fame": 10,
+  "innerPeace": 50,
+  "buildDone": [],
+  "questsDone": [],
+  "upgradesDone": []
+}
