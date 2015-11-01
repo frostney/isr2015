@@ -55,6 +55,34 @@ h1, h2, h3, h4, .button {
   position: absolute;
 }
 
+.night-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+
+  opacity: 0.3;
+}
+
+.menu {
+  @width: 480px;
+  @height: 360px;
+
+  position: absolute;
+  width: @width;
+  height: @height;
+  margin-left: @width * (-0.5);
+  margin-top: @height * (-0.5);
+
+  background-color: rgba(20, 20, 20, 0.8);
+
+  padding: @padding-default;
+
+  border-radius: 0.5rem;
+
+  top: 50%;
+  left: 50%;
+}
+
 .bubble {
   @width: 11.25rem;
 

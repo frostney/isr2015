@@ -8,6 +8,7 @@ import GameObject from '../GameObject';
 import Button from '../Button';
 import Bubble from '../Bubble';
 import ProgressBar from '../ProgressBar';
+import BuildMenu from '../BuildMenu';
 
 class Bar extends Component {
   constructor(props) {
@@ -33,6 +34,8 @@ class Bar extends Component {
   render() {
     return (
       <Scene name="game">
+
+        <div className="night-overlay" />
         <Bubble row={1}>Day: {this.state.day}</Bubble>
         <Bubble row={2}>Health: {this.state.health}</Bubble>
         <Bubble row={3}>Blood: {this.state.blood}</Bubble>
@@ -41,6 +44,7 @@ class Bar extends Component {
         <Button className="button-build">Build</Button>
         <Button className="button-quests">Quests</Button>
         <Button className="button-next">Next day</Button>
+        <BuildMenu />
       </Scene>
     );
   }
