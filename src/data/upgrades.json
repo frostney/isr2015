@@ -1,1 +1,11 @@
-[]
+[{
+  "name": "Stronger fangs",
+  "description": "All successful quests give +1 blood",
+  "gold": -50,
+  "health": -10
+}, {
+  "name": "Hardened fangs",
+  "description": "All successful quests give +5 blood",
+  "gold": -500,
+  "health": -25
+}]

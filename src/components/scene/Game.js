@@ -43,7 +43,7 @@ class Bar extends Component {
   onBuild = () => this.setState({menu: 'build'});
   onQuests = () => this.setState({menu: 'quests'});
   onUpgrades = () => this.setState({menu: 'upgrades'});
-  onNextDay = () => console.log('näxt');
+  onNextDay = () => this.setState({menu: 'nextday'});
 
   render() {
     const menu = (() => {
@@ -63,7 +63,6 @@ class Bar extends Component {
 
     return (
       <Scene name="game">
-        <div className="night-overlay" />
         {bubbles}
         <ProgressBar progress={this.state.innerPeace} />
         <Button className="button-build" onClick={this.onBuild}>Build</Button>
