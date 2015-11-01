@@ -7,28 +7,46 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      fading: false,
+      invisible: true,
     };
   }
 
   componentDidMount() {
+    this.setState({invisible: true});
 
+    setTimeout(() => this.setState({invisible: false}), 50);
   }
 
   componentWillUnmount() {
+    this.setState({invisible: true});
+  }
 
+  onClose = () => {
+    this.setState({invisible: true}, () => {
+      setTimeout(() => {
+        if (this.props.onClose) {
+          this.props.onClose.apply(this, arguments);
+        }
+      }, 400);
+    });
   }
 
   render() {
     const items = this.props.items.map((item, index) => <MenuItem key={index} {...item} />);
 
+    let className = 'menu-container';
+
+    if (this.state.invisible) {
+      className += ' invisible';
+    }
+
     return (
-      <div>
-        <div className="menu-overlay" />
+      <div className={className}>
+        <div className="menu-overlay" onClick={this.onClose} />
         <div className="menu">
           <h2>{this.props.title}</h2>
           <div className="menu-inner">{items}</div>
-          <div className="menu-bottom"><Button onClick={this.props.onClose}>Close</Button></div>
+          <div className="menu-bottom"><Button onClick={this.onClose}>Close</Button></div>
         </div>
       </div>
     );
