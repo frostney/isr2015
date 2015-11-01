@@ -20,7 +20,7 @@ body {
   background: #f2f2f2;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .button {
   font-family: 'Shadows Into Light', cursive;
 }
 
@@ -36,6 +36,8 @@ h1, h2, h3, h4 {
 }
 
 .scene {
+  padding: 20px;
+
   &.intro {
     padding: 40px;
   }
@@ -43,6 +45,28 @@ h1, h2, h3, h4 {
 
 .game-object {
   position: absolute;
+}
+
+.bubble {
+  width: 20%;
+  height: 32px;
+  position: absolute;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 100%;
+
+  background-color: navy;
+  border: 1px solid #888;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  .progress-bar-active {
+    background-color: yellow;
+    height: 100%;
+  }
 }
 
 .credits {

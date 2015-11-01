@@ -6,39 +6,39 @@ import Credits from '../Credits';
 import World from 'store/World';
 import GameObject from '../GameObject';
 import Button from '../Button';
+import Bubble from '../Bubble';
+import ProgressBar from '../ProgressBar';
 
 class Bar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      dialog: 'intro',
-      dialogIndex: 0,
-      dialogVisible: true,
+      day: 1,
+      health: 100,
+      blood: 100,
+      fame: 10,
+      innerPeace: 50,
     };
   }
 
   componentDidMount() {
-    World.on('dialog', dialogState => {
-      this.setState({
-        dialog: dialogState,
-      });
-    });
-
-    World.on('dialogIndex', dialogIndex => {
-      this.setState({
-        dialogIndex: dialogIndex,
-      });
-    });
+    World.on('day', value => this.setState({day: value}));
+    World.on('health', value => this.setState({health: value}));
+    World.on('blood', value => this.setState({blood: value}));
+    World.on('fame', value => this.setState({fame: value}));
+    World.on('innerPeace', value => this.setState({innerPeace: value}));
   }
 
   render() {
     return (
       <Scene name="game">
-        <div>Health: 100</div>
-        <div>Blood: 100</div>
-        <div>Fame: 150</div>
-        <div>Inner Peace: 50 / 100</div>
+        <Bubble>Day: {this.state.day}</Bubble>
+        <Bubble>Health: {this.state.health}</Bubble>
+        <Bubble>Blood: {this.state.blood}</Bubble>
+        <Bubble>Fame: {this.state.fame}</Bubble>
+        <ProgressBar progress={this.state.innerPeace} />
+        <div>Inner Peace: {this.state.innerPeace} / 100</div>
         <Button>Quests</Button>
         <Button>Next day</Button>
       </Scene>
