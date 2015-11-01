@@ -3,11 +3,9 @@ import React, {Component} from 'react';
 import Scene from './Scene';
 import BackgroundImage from '../BackgroundImage';
 import Credits from '../Credits';
-import Dialog from '../Dialog';
 import World from 'store/World';
 import GameObject from '../GameObject';
-
-import data from 'data';
+import Button from '../Button';
 
 class Bar extends Component {
   constructor(props) {
@@ -37,7 +35,12 @@ class Bar extends Component {
   render() {
     return (
       <Scene name="game">
-
+        <div>Health: 100</div>
+        <div>Blood: 100</div>
+        <div>Fame: 150</div>
+        <div>Inner Peace: 50 / 100</div>
+        <Button>Quests</Button>
+        <Button>Next day</Button>
       </Scene>
     );
   }
