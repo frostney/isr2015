@@ -39,8 +39,9 @@ class Bar extends Component {
         <Bubble>Fame: {this.state.fame}</Bubble>
         <ProgressBar progress={this.state.innerPeace} />
         <div>Inner Peace: {this.state.innerPeace} / 100</div>
-        <Button>Quests</Button>
-        <Button>Next day</Button>
+        <Button className="button-build">Build</Button>
+        <Button className="button-quests">Quests</Button>
+        <Button className="button-next">Next day</Button>
       </Scene>
     );
   }

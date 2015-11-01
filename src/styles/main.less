@@ -1,5 +1,6 @@
 /* Imports */
 @import './fonts.less';
+@import './variables.less';
 
 /* Stiziles */
 
@@ -32,14 +33,21 @@ h1, h2, h3, h4, .button {
 }
 
 .viewport {
-  background-image: linear-gradient(to bottom, #fefefe, #d5d5d5);
+  background-image: linear-gradient(to bottom, @color-light, @color-main);
+  color: #fff;
+  box-shadow: 0px 0px 0.5rem #444;
 }
 
 .scene {
-  padding: 20px;
+  width: 100%;
+  height: 100%;
 
   &.intro {
-    padding: 40px;
+    padding: 4.0rem;
+  }
+
+  &.game {
+    background-image: linear-gradient(to bottom, darken(@color-light, 5%), @color-dark);
   }
 }
 
@@ -49,22 +57,59 @@ h1, h2, h3, h4, .button {
 
 .bubble {
   width: 20%;
-  height: 32px;
+  height: 2.0rem;
   position: absolute;
 }
 
-.progress-bar {
-  height: 20px;
-  width: 100%;
+.button {
+  position: absolute;
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: bold;
 
-  background-color: navy;
-  border: 1px solid #888;
-  border-radius: 12px;
+  background-color: @color-dark;
+  border: 1px solid @color-darker;
+  padding: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 400ms;
+
+  &:hover {
+    background-color: lighten(@color-dark, 10%);
+  }
+
+  &.button-next {
+    bottom: 1.0rem;
+    right: 1.0rem;
+  }
+
+  &.button-build {
+    bottom: 1.0rem;
+    left: 1.0rem;
+  }
+
+  &.button-quests {
+    bottom: 1.0rem;
+    left: 8.0rem;
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  height: 1.0rem;
+  width: 40rem;
+  top: 6rem;
+  margin-left: 5rem;
+
+  background-color: @color-dark;
+  border: 1px solid @color-darker;
+  border-radius: 0.75rem;
 
   overflow: hidden;
 
   .progress-bar-active {
-    background-color: yellow;
+    background-color: lighten(@color-lighter, 30%);
     height: 100%;
   }
 }
