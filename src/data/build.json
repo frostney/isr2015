@@ -25,7 +25,7 @@
   "gold": -100
 }, {
   "name": "Tree decoys",
-  "description": "They look like harmless trees, but are in fact monsters that just look like trees. Spooky, right? Ok, you got me. They are actually just 'trees', but there are really scary ones and I would believe they would be here to hurt me.",
+  "description": "They look like harmless trees, but are in fact monsters that just look like trees. Spooky, right?\nOk, you got me. They are actually just 'trees', but there are really scary ones and I would believe if they would be here to hurt me.",
   "icon": "tree-decoy",
   "fame": 1,
   "innerPeace": 3,

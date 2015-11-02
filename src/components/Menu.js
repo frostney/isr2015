@@ -32,7 +32,13 @@ class Menu extends Component {
   }
 
   render() {
-    const items = this.props.items.map((item, index) => <MenuItem key={index} {...item} />);
+    const items = this.props.items.map((item, index) => {
+      const enabled = (() => {
+        return true;
+      })();
+
+      return <MenuItem key={index} enabled={enabled} {...item} />;
+    });
 
     let className = 'menu-container';
 

@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 class BuildMenu extends Component {
   render() {
-    return <Menu title="Build" onClose={this.props.onClose} items={Build} />;
+    return <Menu title="Defenses" onClose={this.props.onClose} items={Build} />;
   }
 }
 
