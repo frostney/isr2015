@@ -63,9 +63,10 @@ class Bar extends Component {
 
     return (
       <Scene name="game">
+        <div className="tower" />
         {bubbles}
         <ProgressBar progress={this.state.innerPeace} />
-        <Button className="button-build" onClick={this.onBuild}>Build</Button>
+        <Button className="button-build" onClick={this.onBuild}>Defenses</Button>
         <Button className="button-quests" onClick={this.onQuests}>Quests</Button>
         <Button className="button-upgrades" onClick={this.onUpgrades}>Upgrades</Button>
         <Button className="button-next" onClick={this.onNextDay}>Next day</Button>

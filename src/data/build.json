@@ -1,13 +1,78 @@
 [{
   "name": "Warning sign",
-  "description": "Build a warning sign outside the house, so trespassers believe it isn't worth to enter.",
-  "icon": "",
+  "description": "Build a warning sign outside the house, so trespassers believe it isn't worth to enter. It says something like: 'Trespassers will be murdered horribly'. A classic!",
+  "icon": "warning-sign",
   "fame": 1,
-  "innerPeace": 2
+  "innerPeace": 2,
+  "gold": -40
 }, {
-  "name": "Mines",
-  "description": "Build some mines around the building to keep outsiders outside.",
-  "icon": "",
-  "fame": 2,
+  "name": "Lock for the door",
+  "description": "I totally forgot, I didn't even have a lock on my door. I guess it's about time to get one of those.",
+  "icon": "lock",
+  "gold": -50,
+  "innerPeace": 3
+}, {
+  "name": "Bridge",
+  "description": "Let's build a bridge and a river around the tower. Swimming is harder than walking, so that ought to stop these nasty intruders.",
+  "gold": -125,
   "innerPeace": 5
+}, {
+  "name": "Firecrackers",
+  "description": "If a warning sign can't stop trespassers, I need to up my game. Those are not going to hurt anyone, but they should scare everyone. I mean I would be scared if I hear something like an explosion when approaching a tower with a vampire living inside.",
+  "icon": "firecrackers",
+  "fame": 2,
+  "innerPeace": 5,
+  "gold": -100
+}, {
+  "name": "Tree decoys",
+  "description": "They look like harmless trees, but are in fact monsters that just look like trees. Spooky, right? Ok, you got me. They are actually just 'trees', but there are really scary ones and I would believe they would be here to hurt me.",
+  "icon": "tree-decoy",
+  "fame": 1,
+  "innerPeace": 3,
+  "gold": -150,
+  "fame": 1
+}, {
+  "name": "Labyrinth",
+  "description": "Let's create a labyrinth around the tower. I'm sure intruders would just give up before they get closer",
+  "icon": "labyrinth",
+  "fame": 4,
+  "gold": -250,
+  "innerPeace": 10
+}, {
+  "name": "Spikes",
+  "description": "Those spikes come out of the ground once outsiders come near the tower. Pretty easy concept in itself.",
+  "icon": "spikes",
+  "innerPeace": 2,
+  "gold": -100,
+  "fame": 3
+}, {
+  "name": "Skeletons",
+  "description": "If I was an intruder, I would be super-scared right now. Skeletons mean that however is living there means business.",
+  "icon": "skeleton",
+  "innerPeace": 5,
+  "gold": -150,
+  "fame": 5
+}, {
+  "name": "People on spikes",
+  "description": "Let's put some of the brave souls who tried to intrude on spikes for more scariness and stuff.",
+  "icon": "people",
+  "gold": -200,
+  "innerPeace": 5,
+  "fame": 10
+}, {
+  "name": "Icicle spikes",
+  "description": "They will eventually melt I guess. I feel they are way sharper than usual spikes.",
+  "icon": "icicle-spike",
+  "innerPeace": 10,
+  "gold": -150,
+  "fame": 4
+}, {
+  "name": "Icicled people",
+  "description": "What's scarier than skeletons? People frozen in ice just in front of my doorstep. Granted, they will eventually melt and it may require some 'volunteers'.",
+  "icon": "icicle-people",
+  "innerPeace": 15,
+  "gold": -250,
+  "blood": -10,
+  "health": -5,
+  "fame": 8
 }]

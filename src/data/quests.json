@@ -1,1 +1,31 @@
-[]
+[{
+  "name": "Plunder the nearest cottage",
+  "description": "It's a remote cottage and there usually not a lot of people there, but I need my supply of blood even if it means hurting some people",
+  "gold": 50,
+  "blood": 20,
+  "innerPeace": -5
+}, {
+  "name": "Visit a shaman",
+  "description": "Maybe a shaman can get me some peace and quiet and help me with my inner demons",
+  "health": 20,
+  "innerPeace": 10
+}, {
+  "name": "Plunder the nearest village",
+  "description": "It's not nice and doesn't help with the notority, but one of the only ways to get some gold and blood",
+  "health": -10,
+  "gold": 200,
+  "blood": 50,
+  "fame": 20,
+  "innerPeace": -5
+}, {
+  "name": "Dance at a masquerade's ball",
+  "description": "Call me cheesy, but I always wanted to do go to a fancy gala. It's pretty low risk, giving some time to enjoy myself and have a snack there if I get thirsty.",
+  "blood": 15,
+  "innerPeace": 5,
+  "fame": 10
+}, {
+  "name": "Looking for some treasure",
+  "description": "There are some unexplored caves in the mountains with rumors of there being a treasure. It would make me more famous though, which may be a bad thing.",
+  "gold": 200,
+  "fame": 50
+}]
