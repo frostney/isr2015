@@ -14,7 +14,7 @@ import UpgradesMenu from '../UpgradesMenu';
 import NextDayMenu from '../NextDayMenu';
 import IntroductionDialog from '../IntroductionDialog';
 
-class Bar extends Component {
+class Game extends Component {
   constructor(props) {
     super(props);
 
@@ -148,4 +148,4 @@ class Bar extends Component {
   }
 }
 
-export default Bar;
+export default Game;

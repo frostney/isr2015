@@ -3,6 +3,10 @@ import MenuItem from './MenuItem';
 import Button from './Button';
 
 class Menu extends Component {
+  static defaultProps = {
+    onFilter: function() { return true; }
+  }
+
   constructor(props) {
     super(props);
 
@@ -32,10 +36,12 @@ class Menu extends Component {
   }
 
   render() {
-    const items = this.props.items.map((item, index) => {
+    const items = this.props.items
+    .filter(this.props.onFilter)
+    .map((item, index) => {
       const enabled = (() => {
         if (this.props.onFilterEnabled) {
-          return this.props.onFilterEnabled(item);
+          return this.props.onFilterEnabled(item, index);
         }
 
         return true;
@@ -47,7 +53,7 @@ class Menu extends Component {
         }
 
         if (this.props.onMenuItem) {
-          this.props.onMenuItem(item);
+          this.props.onMenuItem(item, index);
         }
       }
 
