@@ -7,7 +7,7 @@ World.stateData = {};
 Object.keys(Defaults).forEach(key => {
   World.stateData[key] = Defaults[key];
 
-  World.on(key, value => World.stateData[key] = value);
+  World.on(key, value => World.stateData[key] = World.stateData[key] + value);
 });
 
 World.reset = function(key) {

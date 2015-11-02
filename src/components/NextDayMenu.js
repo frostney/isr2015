@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 
+import World from 'store/World';
+
 import Menu from './Menu';
 
 class NextDayMenu extends Component {
+  componentDidMount() {
+    World.trigger('day', 1);
+    World.trigger('blood', -10);
+  }
+
   render() {
     let itemNames = ['Intruders', 'Blood'];
 
@@ -13,7 +20,7 @@ class NextDayMenu extends Component {
       };
     });
 
-    return <Menu title="It's the next day" onClose={this.props.onClose} items={items} />;
+    return <Menu className="nextday" title="It's the next day" onClose={this.props.onClose} items={items} />;
   }
 }
 

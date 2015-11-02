@@ -6,13 +6,39 @@ class MenuItem extends Component {
       return <div className="line" key={index}>{line}</div>;
     });
 
+    let className = 'menu-item';
+
+    if (!this.props.enabled) {
+      className += ' disabled';
+    }
+
+    const costs = (() => {
+      const {gold, health, blood} = this.props;
+      let arr = [];
+
+      if (gold < 0) {
+        arr.push(<div>Gold: {gold * (-1)}</div>);
+      }
+
+      if (health < 0) {
+        arr.push(<div>Health: {health * (-1)}</div>);
+      }
+
+      if (blood < 0) {
+        arr.push(<div>Blood: {blood * (-1)}</div>);
+      }
+
+      return arr;
+    })();
+
     return (
-      <div className="menu-item" onClick={this.props.onClick}>
+      <div className={className} onClick={this.props.onClick}>
         <div className={`menu-item-icon menu-item-icon-${this.props.icon}`} />
         <div className="menu-item-text">
           <h3>{this.props.name}</h3>
           <div className="menu-item-description">{description}</div>
         </div>
+        <div className="menu-item-costs">{costs}</div>
       </div>
     )
   }

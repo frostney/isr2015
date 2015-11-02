@@ -34,16 +34,34 @@ class Menu extends Component {
   render() {
     const items = this.props.items.map((item, index) => {
       const enabled = (() => {
+        if (this.props.onFilterEnabled) {
+          return this.props.onFilterEnabled(item);
+        }
+
         return true;
       })();
 
-      return <MenuItem key={index} enabled={enabled} {...item} />;
+      const onClick = () => {
+        if (!enabled) {
+          return;
+        }
+
+        if (this.props.onMenuItem) {
+          this.props.onMenuItem(item);
+        }
+      }
+
+      return <MenuItem key={index} onClick={onClick} enabled={enabled} {...item} />;
     });
 
     let className = 'menu-container';
 
     if (this.state.invisible) {
       className += ' invisible';
+    }
+
+    if (this.props.className) {
+      className += ` ${this.props.className}`;
     }
 
     return (

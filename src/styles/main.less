@@ -70,14 +70,6 @@ h1, h2, h3, h4, h5, h6 {
     width: inherit;
     height: inherit;
 
-    h2 {
-      text-align: left;
-    }
-
-    h3 {
-      text-align: center;
-    }
-
     .input-name {
       margin-top: 0.5rem;
       padding-right: 2rem;
@@ -160,9 +152,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 20px;
 }
 
-.menu-item-icon {
-  width: 6.0rem;
-  height: 6.0rem;
+.menu-container.nextday {
+  .menu-inner {
+    pointer-events: none;
+  }
 }
 
 .menu-item {
@@ -175,17 +168,33 @@ h1, h2, h3, h4, h5, h6 {
   &:hover {
     border: 1px solid @color-olive-light;
   }
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
 }
 
 .menu-item-text {
-  width: 70%;
+  /*width: 70%;*/
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-left: @padding-default;
 }
 
-.menu-item-icon, .menu-item-text {
+.menu-item-costs {
+  margin-left: @padding-default;
+  padding-bottom: 0.5rem;
+}
+
+/*.menu-item-icon,*/ .menu-item-text {
   display: inline-block;
+}
+
+.menu-item-icon {
+  width: 6.0rem;
+  height: 6.0rem;
+  display: none;
 }
 
 .input-name {
@@ -278,13 +287,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &.button-upgrades {
+    display: none;
     bottom: 1.0rem;
     left: 15.5rem;
   }
 
   &.button-help {
     bottom: 1.0rem;
-    left: 23.25rem;
+    left: 15.5rem;
   }
 }
 
