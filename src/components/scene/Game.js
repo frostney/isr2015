@@ -11,6 +11,8 @@ import ProgressBar from '../ProgressBar';
 import BuildMenu from '../BuildMenu';
 import QuestsMenu from '../QuestsMenu';
 import UpgradesMenu from '../UpgradesMenu';
+import NextDayMenu from '../NextDayMenu';
+import IntroductionDialog from '../IntroductionDialog';
 
 class Bar extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class Bar extends Component {
       gold: 150,
       fame: 10,
       innerPeace: 50,
-      menu: 'none',
+      menu: 'introduction',
     };
   }
 
@@ -49,9 +51,11 @@ class Bar extends Component {
     const menu = (() => {
       switch (this.state.menu) {
         case 'none': return null;
+        case 'introduction': return <IntroductionDialog onClose={this.onCloseMenu} />;
         case 'build': return <BuildMenu onClose={this.onCloseMenu} />;
         case 'quests': return <QuestsMenu onClose={this.onCloseMenu} />;
         case 'upgrades': return <UpgradesMenu onClose={this.onCloseMenu} />;
+        case 'nextday': return <NextDayMenu onClose={this.onCloseMenu} />;
         default:
           return null;
       }
