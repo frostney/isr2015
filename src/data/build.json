@@ -1,6 +1,6 @@
 [{
   "name": "Warning sign",
-  "description": "Build a warning sign outside the house, so trespassers believe it isn't worth to enter. It says something like: 'Trespassers will be murdered horribly'. A classic!",
+  "description": "Build a warning sign outside the house, so trespassers believe it isn't worth to enter. It says something like: 'Trespassers will be murdered horribly'.\nA classic!",
   "icon": "warning-sign",
   "fame": 1,
   "innerPeace": 2,
@@ -31,6 +31,12 @@
   "innerPeace": 3,
   "gold": -150,
   "fame": 1
+}, {
+  "name": "Flowers",
+  "description": "Those flowers turn into monsters when approached. Evil little buggers.\nThey actually don't, those are just regular flowers. They don't do anything for protection. I just like flowers, ok?",
+  "icon": "flowers",
+  "innerPeace": 10,
+  "gold": -250
 }, {
   "name": "Labyrinth",
   "description": "Let's create a labyrinth around the tower. I'm sure intruders would just give up before they get closer",
