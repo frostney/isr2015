@@ -5,6 +5,8 @@
   "gold": 150,
   "fame": 10,
   "innerPeace": 50,
+  "name": "Derpula",
+  "scene": "Intro",
   "buildDone": [],
   "questsDone": [],
   "upgradesDone": []

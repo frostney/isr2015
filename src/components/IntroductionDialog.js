@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
-import {Introduction} from '../data';
+import {Introduction} from 'data';
 import Button from './Button';
+import World from 'store/World';
 
 class IntroductionDialog extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: 'Derpula',
+      name: World.stateData.name,
     };
   }
 
@@ -19,11 +20,11 @@ class IntroductionDialog extends Component {
 
     return (
       <div>
-        <div className="menu-overlay" onClick={this.onClose} />
+        <div className="menu-overlay" onClick={this.props.onClose} />
         <div className="menu">
           <h2>Hi there, {this.state.name}!</h2>
           <div className="menu-inner">{items}</div>
-          <div className="menu-bottom"><Button onClick={this.onClose}>Close</Button></div>
+          <div className="menu-bottom"><Button onClick={this.props.onClose}>Close</Button></div>
         </div>
       </div>
     );

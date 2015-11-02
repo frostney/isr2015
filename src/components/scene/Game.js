@@ -46,6 +46,7 @@ class Bar extends Component {
   onQuests = () => this.setState({menu: 'quests'});
   onUpgrades = () => this.setState({menu: 'upgrades'});
   onNextDay = () => this.setState({menu: 'nextday'});
+  onHelp = () => this.setState({menu: 'introduction'});
 
   render() {
     const menu = (() => {
@@ -73,6 +74,7 @@ class Bar extends Component {
         <Button className="button-build" onClick={this.onBuild}>Defenses</Button>
         <Button className="button-quests" onClick={this.onQuests}>Quests</Button>
         <Button className="button-upgrades" onClick={this.onUpgrades}>Upgrades</Button>
+        <Button className="button-help" onClick={this.onHelp}>Help</Button>
         <Button className="button-next" onClick={this.onNextDay}>Next day</Button>
         {menu}
       </Scene>
